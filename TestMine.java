@@ -63,12 +63,15 @@ public class TestMine {
         testLevel[0][0].setBomb();
         testLevel[1][1].setBomb();
 
-        //testWelt.clickedLeft(1, 1); //gut!
+        testWelt.clickedLeft(1, 1); //gut!
         //testWelt.clickedRight(1, 1); // if clickedRight should fail, gut!
 
-        testWelt.clickedLeft(0, 1); // should fail if bomb = false! bombs are only in (0, 0) and (1, 1) <-- Problem, die Skalierung schikt immer zu (0, 0) und nicht (0, 1)
+        //testWelt.clickedLeft(0, 1); // should fail if bomb = false! bombs are only in (0, 0) and (1, 1) <-- Problem, die Skalierung schikt immer zu (0, 0) und nicht (0, 1)
 
         assertTrue("Test bomb + left mouse button = dead; test failed", testWelt.isDead());
+        testGanzLevel.setAmountOfNearBombs(2); // es fehlt was noch
+        testWelt.clickedRight(1,0);
+        //assertTrue(testGanzLevel.isOpened());
         //assertTrue("Test failed!", testL.isOpened());
 
         //assertFalse("The tile has not bomb", testGanzLevel.isBomb());
